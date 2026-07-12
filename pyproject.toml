@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gumu"
+version = "0.1.0"
+description = "Gumu - A smart local coding agent with semantic context management, supporting DeepSeek, OpenAI-compatible, Anthropic-compatible, and Ollama models"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+gumu = "gumu.cli:main"
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3.5",
+  "ruff>=0.4.4",
+]
+
+[tool.setuptools.packages.find]
+include = ["gumu*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
